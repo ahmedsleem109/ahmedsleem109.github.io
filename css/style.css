@@ -8,7 +8,6 @@
 /*======================================
 //--//-->   STYLES GENERALES
 ======================================*/
-
 body {
   background-color: #f5f5f5;
   color: #4e4e4e;
@@ -764,46 +763,127 @@ a:hover {
   margin-bottom: 0;
 }
 /* Background image and overlay for the Experience section */
-/* Timeline styling */
-.timeline {
-  position: relative;
-  padding: 20px 0;
-  list-style: none;
+/* Basic styling for the experience section */
+/* Scoped CSS for the experience-timeline section */
+/* Scoped CSS for the experience-timeline section */
+.experience-timeline {
+  width: 100%;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: white; /* Changed background to white */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSection 1.5s forwards ease-in-out;
 }
 
-.timeline-item {
-  position: relative;
-  padding: 20px 0;
-  border-left: 2px solid #fff; /* Change color if needed */
+/* Header styling */
+.experience-timeline .title h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 30px;
 }
 
-.timeline-date {
-  position: absolute;
-  left: -150px; /* Adjust positioning */
-  width: 140px;
-  text-align: right;
+/* Timeline styling specific to the experience-timeline section */
+.experience-timeline .contents {
+  position: relative;
+  margin-left: 50px;
+  padding: 10px 0;
+}
+
+.experience-timeline .box {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 40px;
+}
+
+/* Date styling */
+.experience-timeline .box h4 {
+  margin: 0;
+  padding: 5px 0;
+  color: #333;
   font-weight: bold;
-  color: #fff;
 }
 
-.timeline-content {
-  margin-left: 160px; /* Adjust positioning */
-  background: rgba(0, 0, 0, 0.6); /* Background for timeline content */
-  padding: 10px;
-  border-radius: 8px;
-  color: #fff;
+/* Internship title in bold and blue */
+.experience-timeline .box h3 {
+  margin: 0;
+  padding: 5px 0;
+  font-weight: bold;
+  color: #007BFF; /* Blue bold location */
 }
 
-.timeline-content h4 {
-  margin-top: 0;
-  font-size: 18px;
+/* Description in black */
+.experience-timeline .box p {
+  margin: 0;
+  padding: 5px 0;
+  color: black; /* Description in black */
 }
 
-.timeline-content p {
-  margin-bottom: 0;
-  font-size: 16px;
+/* Circle and line styling specific to the experience-timeline section */
+.experience-timeline .box::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #007BFF; /* Blue circle */
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s forwards ease;
 }
 
+.experience-timeline .box::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 25px;
+  width: 2px;
+  height: 100%;
+  background-color: #007BFF; /* Blue vertical line */
+  z-index: 0;
+  opacity: 0;
+  animation: fadeIn 1s forwards ease;
+}
+
+/* Fade in and slide up animation for the section */
+@keyframes fadeInSection {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Animation for timeline fade-in */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .experience-timeline .box {
+      padding-left: 30px;
+  }
+
+  .experience-timeline .box::before, .experience-timeline .box::after {
+      left: 5px;
+  }
+}
 
 
 /*======================================
